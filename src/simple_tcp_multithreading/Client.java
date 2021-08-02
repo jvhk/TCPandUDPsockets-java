@@ -1,4 +1,4 @@
-package simple_tcp_2;
+package simple_tcp_multithreading;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -18,15 +18,11 @@ public class Client {
 		PrintWriter out_socket = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
 		Scanner scanner_keyboard = new Scanner(System.in); 
 		
-		String user_number;
+		String message = in_socket.readLine();
+		System.out.println("Server says: " + message);
 		
-		while((in_socket.readLine()).startsWith("Guess")) {
-			System.out.println("Server says: Guess a number [1-10]");
-			user_number = scanner_keyboard.nextLine();
-			out_socket.println(user_number);
-		}
-		
-		System.out.println("Yout got it!");
+		message = scanner_keyboard.nextLine();
+		out_socket.println(message);
 		
 		socket.close();
 		System.out.println("Socket closed on Client");

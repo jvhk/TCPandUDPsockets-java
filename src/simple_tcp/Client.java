@@ -9,7 +9,7 @@ import java.net.Socket;
 public class Client {
 	
 	public Client () throws Exception {
-		Socket socket = new Socket("localhost", 2020);
+		Socket socket = new Socket("192.168.1.4", 2020);
 		System.out.println("Succesfull connection to the server");
 		
 		// I/O streams
